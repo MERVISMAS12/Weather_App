@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Weather App</title>
+    <link rel="icon" href="LOGO.jpeg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="script.js"></script>
+</head>
+<style>
+    .container{
+            display : flex;
+            justify-content : space-between;
+            align-items : center;
+            border: none;
+    }
+    @media (max-width: 782px){
+            .container{
+            display : inline;
+            justify-content : space-between;
+            border: none;
+            }
+    }
+    
+</style>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <p>&emsp;&emsp;</p>
+        <img src="LOGO.jpeg" alt="logo" style="width: 50px; border-radius: 100%;">
+        <a class="navbar-brand" href="index.html">&emsp;Weather App &emsp;</a>
+        
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="index.html">Home&emsp;</a>
+            <a class="nav-item nav-link" href="about.html">About&emsp;</a>
+            <a class="nav-item nav-link" href="contact.html">Contact&emsp;</a>
+            <form class="d-flex" role="search">
+                <input id="city" class="form-control " type="search" placeholder="Search" aria-label="Search">
+                <button  class="btn btn-outline-success my-2 my-sm-0" type="submit" id="sub" > Search </button>
+                <script defer>
+                    sub.addEventListener('click', (e) =>{
+                        e.preventDefault();
+                        getWheather(city.value)
+                        cityName.innerHTML = city.value;
+                    })
+                </script>
+            </form>
+                
+          </div>
+        </div>
+      </nav>
+      <br><br><br>
+      <center><h1 class="welcome">Weather for <span id="cityName">Delhi</span> </h1></center>
+      <br><br><br>
+      <center>
+      <div class="container">
+        <div class="card bg-dark text-white" style="width: 300px; border: none;">
+            <img class="card-img" src="temp.png"  alt="Card image">
+            <div class="card-img-overlay">
+                <br>
+              <h4 class="card-title" style="color: black;">Temperature</h4><br>
+              <h2 class="card-text" style="color: gray;"><span style="color: black;" id="temp">32</span>℃</h2>
+              <h5 class="card-text" style="color: black;">Minimum Temperature: <span id="min_temp">32</span>℃</h5>
+              <h5 class="card-text" style="color: black;">Maximum Temperature: <span id="max_temp">32</span>℃</h5>
+            </div>
+          </div>
+
+          <div class="card bg-dark text-white" style="width: 300px; border: none;">
+            <img class="card-img" src="cloud.png"  alt="Card image">
+            <div class="card-img-overlay">
+                <br>
+                <h4 class="card-title" style="color: black;">Humidity</h4><br>
+                <h2 class="card-text" style="color: gray;"><span style="color: black;" id="humidity">66</span>%</h2>
+                <h5 class="card-text" style="color: black;">Cloud pct: <span id="cloud_pct">20</span></h5>
+                <h5 class="card-text" style="color: black;">Feels like: <span id="feels_like">39</span></h5>
+            </div>
+          </div>
+
+          <div class="card bg-dark text-white" style="width: 300px; border: none;">
+            <img class="card-img" src="wind.png"  alt="Card image">
+            <div class="card-img-overlay">
+                <br>
+                <h4 class="card-title" style="color: black;">Wind</h4><br>
+                <h2 class="card-text" style="color: gray;"><span style="color: black;" id="wind_speed">2.06</span> km/hr</h2>
+                <h5 class="card-text" style="color: black;">Wind Degree: <span id="wind_degrees">120</span></h5>
+                <h5 class="card-text" style="color: black;">Sunrise time: <span id="sunrise">20:12:45</span></h5>
+                <h5 class="card-text" style="color: black;">Sunset time: <span id="sunset">20:13:30</span></h5>
+            </div>
+          </div>
+      </div>
+      <br><br><br><br>
+      <h1 class="welcome">Weather for other places</h1>
+      <br><br>
+
+      <div class="container">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col"> </th>
+                <th scope="col">Cloud pct</th>
+                <th scope="col">Temp</th>
+                <th scope="col">Feels like</th>
+                <th scope="col">Humidity</th>
+                <th scope="col">Min temp</th>
+                <th scope="col">Max temp</th>
+                <th scope="col">Wind speed</th>
+                <th scope="col">Wind Degree</th>
+
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Shanghai</th>
+                <td>75</td>
+                <td>23</td>
+                <td>24</td>
+                <td>88</td>
+                <td>23</td>
+                <td>24</td>
+                <td>5</td>
+                <td>320</td>
+
+              </tr>
+              <tr>
+                <th scope="row">New york</th>
+                <td>100</td>
+                <td>23</td>
+                <td>24</td>
+                <td>85</td>
+                <td>22</td>
+                <td>25</td>
+                <td>5.14</td>
+                <td>210</td>
+
+              </tr>
+              <tr>
+                <th scope="row">Mumbai</th>
+                <td>40</td>
+                <td>29</td>
+                <td>36</td>
+                <td>84</td>
+                <td>29</td>
+                <td>29</td>
+                <td>3.09</td>
+                <td>330</td>
+
+              </tr>
+            </tbody>
+          </table>
+      </div>
+      <br><br>
+      <h1>Weather Map</h1>
+      <br><br>
+      <iframe width="650" height="450" src="https://embed.windy.com/embed2.html?lat=21.514&lon=77.322&detailLat=21.514&detailLon=77.322&width=650&height=450&zoom=5&level=surface&overlay=wind&product=ecmwf&menu=&message=&marker=&calendar=now&pressure=&type=map&location=coordinates&detail=&metricWind=default&metricTemp=default&radarRange=-1" frameborder="0"></iframe>
+    </center>
+
+  </body>
+</html>
